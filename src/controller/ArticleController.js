@@ -6,8 +6,6 @@ import { defaultLogger } from '../LoggerUtils';
 
 const logger = defaultLogger();
 
-// TODO - LIMITATION MAX NUM OF RESULTS TO BE ENTERED AT A TIME WILL BE THE DEFAULT PAGE SIZE WHICH IS 100
-
 export const getAllArticles = async () => {
   logger.info('Request received to get all articles');
   return await articleRepository.getAllArticles();
