@@ -2,7 +2,7 @@ import { createConnection } from 'typeorm';
 
 export const dbConnection = createConnection({
    "type": "postgres",
-   "host": "localhost",
+   "host": "db",
    "port": 5432,
    "username": "me",
    "password": "password",

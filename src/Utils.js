@@ -1,6 +1,4 @@
-import { isNil, get, isEmpty, map } from 'lodash';
-import crypto from 'crypto';
-import { ResourceNotFoundError } from './Errors';
+import { isNil, get, map } from 'lodash';
 
 export const RequestMethod = {
   POST: 'post',
@@ -16,23 +14,6 @@ export const getStatusCode = (method, content) => {
     return 201;
   } else {
     return 200;
-  }
-};
-
-export const hashPasswordWithSalt  = (password) => {
-  const userSpecificSalt = crypto.randomBytes(16).toString('hex');
-  const hash = crypto.pbkdf2Sync(password, userSpecificSalt, 1000, 64, `sha512`).toString(`hex`);
-  return { salt: userSpecificSalt, hash };
-};
-
-export const isPasswordValid = (password, storedHash, salt) => {
-  const newHash = crypto.pbkdf2Sync(password, salt, 1000, 64, `sha512`).toString(`hex`);
-  return storedHash === newHash;
-};
-
-export const validateLogin = (userFromDb, password) => {
-  if (isEmpty(userFromDb) || !isPasswordValid(password, userFromDb.password, userFromDb.salt)) {
-    throw new ResourceNotFoundError('Username or password incorrect');
   }
 };
 

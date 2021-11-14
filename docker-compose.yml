@@ -5,19 +5,19 @@ services:
     environment:
       POSTGRES_PASSWORD: password
       POSTGRES_USER: me
-      POSTGRES_DB: movie
+      POSTGRES_DB: news
     volumes:
       - ./pg:/var/lib/postgresql/data
     ports:
       - "5432:5432"
   web:
-    image: movie-rest-api/v1.1
+    image: news-article-api/v1.0
     depends_on:
       - db
     ports:
       - "4000:4000"
   ui:
-    image: movie-fe/v1.1
+    image: news-article-react-fe/v1.0
     depends_on:
       - web
     ports:

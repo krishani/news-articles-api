@@ -26,7 +26,7 @@ app.listen(port, () => {
 });
 
 app.get('/', (request, response) => {
-  response.json({ data: 'Welcome to the movie API' });
+  response.json({ data: 'Welcome to the news article API' });
 });
 
 dbConnection
