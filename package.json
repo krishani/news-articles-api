@@ -1,0 +1,27 @@
+{
+  "name": "news-article-rest-api",
+  "version": "1.0.0",
+  "description": "test exercise to build a rest api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "babel-node ./src/index.js"
+  },
+  "author": "krishani indrachapa",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/node": "^7.16.0",
+    "@babel/preset-env": "^7.16.0",
+    "axios": "^0.24.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.21",
+    "pg": "^8.7.1",
+    "typeorm": "^0.2.38",
+    "winston": "^3.3.3"
+  }
+}
